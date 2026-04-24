@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureReach | Waterfed Pole Window Cleaning</title>
+    <style>
+        :root {
+            --primary: #00a8e6;
+            --dark: #1a2a44;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        header {
+            background: linear-gradient(rgba(26, 42, 68, 0.95), rgba(26, 42, 68, 0.95)), url('https://picsum.photos/id/1015/1920/1080') center/cover no-repeat;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-dot {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 42, 68, 0.7), rgba(26, 42, 68, 0.7)), url('https://picsum.photos/id/1015/1920/1080') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 168, 230, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0, 168, 230, 0.4);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        
+        .services {
+            background-color: #f8f9fa;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .areas {
+            background: white;
+        }
+        
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .area-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            color: var(--dark);
+            transition: all 0.3s;
+        }
+        
+        .area-item:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.03);
+        }
+        
+        .why-us {
+            background: linear-gradient(135deg, #00a8e6, #0077a3);
+            color: white;
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .why-card {
+            background: rgba(255,255,255,0.15);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .testimonial {
+            background: #f8f9fa;
+        }
+        
+        .testimonial-slider {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .testimonial-text {
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        
+        .contact {
+            background: var(--dark);
+            color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        input, textarea {
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        footer {
+            background: #111;
+            color: #aaa;
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">PureReach<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#areas">Areas</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">☰</div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Clean Windows,<br>Pure Waterfed Technology</h1>
+            <p>Professional waterfed pole window cleaning across North West England &amp; North Wales.<br>Streak-free results with zero chemicals.</p>
+            <a href="#contact" class="btn">Get Your Free Quote Today</a>
+            <p style="margin-top: 2rem; font-size: 1.1rem;">✓ Fully Insured ✓ Pure Water System ✓ No Ladders</p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">🪟</div>
+                    <h3>Window Cleaning</h3>
+                    <p>High-reach waterfed pole system for homes, offices, conservatories and commercial buildings. Safe, efficient and eco-friendly.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Residential Cleaning</h3>
+                    <p>Regular or one-off cleans for houses, bungalows and apartments. We cover all heights safely from the ground.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Commercial Cleaning</h3>
+                    <p>Shop fronts, offices, schools, hotels and industrial units. Reliable scheduled cleaning contracts available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas Covered -->
+    <section id="areas" class="areas">
+        <div class="container">
+            <h2>Areas We Cover</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
+                Serving the entire North West of England and North Wales with fast response times.
+            </p>
+            <div class="areas-grid">
+                <div class="area-item">Manchester</div>
+                <div class="area-item">Liverpool</div>
+                <div class="area-item">Chester</div>
+                <div class="area-item">Preston</div>
+                <div class="area-item">Blackpool</div>
+                <div class="area-item">Bolton</div>
+                <div class="area-item">Wigan</div>
+                <div class="area-item">Warrington</div>
+                <div class="area-item">North Wales</div>
+                <div class="area-item">Snowdonia</div>
+                <div class="area-item">Bangor</div>
+                <div class="area-item">Llandudno</div>
+                <div class="area-item">St Helens</div>
+                <div class="area-item">Southport</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why" class="why-us">
+        <div class="container">
+            <h2 style="color: white;">Why Choose PureReach?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>🌱 Pure Water Technology</h3>
+                    <p>De-ionised water leaves no spots or streaks. No harsh chemicals — better for your windows and the environment.</p>
+                </div>
+                <div class="why-card">
+                    <h3>🛡️ Safe &amp; Professional</h3>
+                    <p>Waterfed pole system means no ladders or scaffolding. Fully insured with over 10 years experience.</p>
+                </div>
+                <div class="why-card">
+                    <h3>💰 Competitive Pricing</h3>
+                    <p>Transparent pricing with no hidden fees. Regular customers enjoy discounted rates.</p>
+                </div>
+                <div class="why-card">
+                    <h3>⭐ Customer Focused</h3>
+                    <p>Local family business. We pride ourselves on reliability, punctuality and outstanding customer service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-slider">
+                <p class="testimonial-text">"PureReach transformed the look of our house! The windows have never been cleaner. Highly recommend their waterfed system — no streaks at all!"</p>
+                <p><strong>— Sarah Thompson, Chester</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 style="color: white;">Get In Touch</h2>
+            <div class="contact-grid">
+                <div>
+                    <h3 style="margin-bottom: 1.5rem;">Ready for sparkling windows?</h3>
+                    <p style="margin-bottom: 2rem; opacity: 0.9;">Fill out the form below or call us directly for a free, no-obligation quote.</p>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <p><strong>Phone:</strong> <a href="tel:01234567890" style="color: var(--primary);">01234 567 890</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:info@purereach.co.uk" style="color: var(--primary);">info@purereach.co.uk</a></p>
+                    </div>
+                    
+                    <div>
+                        <p><strong>Service Areas:</strong><br>
+                        North West England &amp; North Wales</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <form id="contact-form">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="tel" id="phone" placeholder="Phone Number" required>
+                        <input type="email" id="email" placeholder="Email Address">
+                        <textarea id="message" rows="5" placeholder="Tell us about your cleaning needs (e.g. house size, frequency, postcode)" required></textarea>
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 PureReach Waterfed Window Cleaning. All Rights Reserved.</p>
+            <p style="margin-top: 0.5rem;">Professional • Reliable • Eco-Friendly</p>
+            <p style="margin-top: 1.5rem; font-size: 0.85rem;">Serving Manchester, Liverpool, Chester, Preston, North Wales &amp; surrounding areas</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission (demo)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            
+            alert(`Thank you, ${name}! Your message has been received. We'll contact you within 24 hours.`);
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26, 42, 68, 0.98)';
+                header.style.padding = '0.8rem 0';
+            } else {
+                header.style.background = 'linear-gradient(rgba(26, 42, 68, 0.95), rgba(26, 42, 68, 0.95)), url("https://picsum.photos/id/1015/1920/1080") center/cover no-repeat';
+                header.style.padding = '1rem 0';
+            }
+        });
+        
+        // Mobile menu (placeholder - you can enhance this)
+        console.log('%cPureReach Website Ready! ✅', 'color: #00a8e6; font-size: 14px;');
+    </script>
+</body>
+</html>
