@@ -262,7 +262,7 @@
         </div>
     </section>
 
-    <!-- Early Contact Section -->
+    <!-- Contact Section (Early) -->
     <section id="contact" class="contact-early">
         <div class="container">
             <h2>Get In Touch Today</h2>
@@ -277,11 +277,15 @@
                 </div>
                 
                 <div>
-                    <form id="contact-form">
-                        <input type="text" id="name" placeholder="Your Name" required>
-                        <input type="tel" id="phone" placeholder="Phone Number" required>
-                        <input type="email" id="email" placeholder="Email Address">
-                        <textarea id="message" rows="4" placeholder="Tell us about your property and cleaning needs (e.g. house, shop, number of windows, postcode)" required></textarea>
+                    <form id="contact-form" action="https://formspree.io/f/xojyrpgp" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="tel" name="phone" placeholder="Phone Number" required>
+                        <input type="email" name="email" placeholder="Email Address">
+                        <textarea name="message" rows="5" placeholder="Tell us about your property and cleaning needs (e.g. house, shop, number of windows, postcode)" required></textarea>
+                        
+                        <!-- Hidden field to prevent spam -->
+                        <input type="text" name="_gotcha" style="display:none;">
+                        
                         <button type="submit" class="btn" style="width: 100%;">Send Message</button>
                     </form>
                 </div>
@@ -366,24 +370,12 @@
     </footer>
 
     <script>
-        // Form submission
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            alert(`Thank you, ${name}! Your message has been received. We'll get back to you shortly.`);
-            this.reset();
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
+        // Optional: Show success message after redirect back from Formspree
+        window.addEventListener('load', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('submitted') === 'true') {
+                alert('Thank you! Your message has been sent successfully. We will contact you shortly.');
+            }
         });
     </script>
 </body>
