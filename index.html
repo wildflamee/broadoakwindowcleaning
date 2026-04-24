@@ -3,26 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PureReach | Waterfed Pole Window Cleaning</title>
+    <title>Broad Oak Window Cleaning | Professional Window Cleaners</title>
     <style>
         :root {
-            --primary: #00a8e6;
+            --primary: #0066cc;
             --dark: #1a2a44;
             --light: #f8f9fa;
-            --gray: #6c757d;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #fff;
         }
         
         header {
@@ -33,7 +27,6 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
         }
         
         nav {
@@ -46,17 +39,10 @@
         }
         
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: 700;
             color: white;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo-dot {
-            color: var(--primary);
         }
         
         .nav-links {
@@ -69,7 +55,6 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
         }
         
         .nav-links a:hover {
@@ -78,7 +63,7 @@
         
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(26, 42, 68, 0.7), rgba(26, 42, 68, 0.7)), url('https://picsum.photos/id/1015/1920/1080') center/cover no-repeat;
+            background: linear-gradient(rgba(26, 42, 68, 0.75), rgba(26, 42, 68, 0.75)), url('https://picsum.photos/id/1015/1920/1080') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -93,38 +78,33 @@
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.4rem;
             margin-bottom: 1rem;
-            line-height: 1.1;
         }
         
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             margin-bottom: 2rem;
-            opacity: 0.95;
         }
         
         .btn {
             display: inline-block;
             background: var(--primary);
             color: white;
-            padding: 14px 32px;
+            padding: 14px 34px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0, 168, 230, 0.3);
+            font-size: 1.15rem;
+            transition: all 0.3s;
         }
         
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(0, 168, 230, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 102, 204, 0.4);
         }
         
-        section {
-            padding: 80px 0;
-        }
+        section { padding: 80px 0; }
         
         .container {
             max-width: 1200px;
@@ -133,14 +113,39 @@
         }
         
         h2 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             text-align: center;
             margin-bottom: 3rem;
             color: var(--dark);
         }
         
+        .contact-early {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        
+        input, textarea {
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
         .services {
-            background-color: #f8f9fa;
+            background-color: white;
         }
         
         .service-grid {
@@ -154,48 +159,49 @@
             border-radius: 12px;
             padding: 2.5rem 2rem;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
         }
         
         .service-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
         }
         
         .service-icon {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             margin-bottom: 1.5rem;
             color: var(--primary);
         }
         
         .areas {
-            background: white;
+            background: #f8f9fa;
         }
         
         .areas-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
         }
         
         .area-item {
-            background: #f8f9fa;
-            padding: 1.5rem;
+            background: white;
+            padding: 1.8rem 1rem;
             border-radius: 10px;
             text-align: center;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--dark);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
             transition: all 0.3s;
         }
         
         .area-item:hover {
             background: var(--primary);
             color: white;
-            transform: scale(1.03);
+            transform: translateY(-5px);
         }
         
         .why-us {
-            background: linear-gradient(135deg, #00a8e6, #0077a3);
+            background: linear-gradient(135deg, #0066cc, #003366);
             color: white;
         }
         
@@ -206,58 +212,16 @@
         }
         
         .why-card {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.12);
             padding: 2rem;
             border-radius: 12px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .testimonial {
-            background: #f8f9fa;
-        }
-        
-        .testimonial-slider {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .testimonial-text {
-            font-size: 1.25rem;
-            font-style: italic;
-            margin-bottom: 2rem;
-        }
-        
-        .contact {
-            background: var(--dark);
-            color: white;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-        
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        input, textarea {
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
         }
         
         footer {
             background: #111;
             color: #aaa;
-            padding: 3rem 0 1.5rem;
+            padding: 3rem 0 2rem;
             text-align: center;
-            font-size: 0.9rem;
         }
         
         .mobile-menu {
@@ -267,21 +231,10 @@
         }
         
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            .hero h1 { font-size: 2.7rem; }
+            .contact-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -289,12 +242,11 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="logo">PureReach<span class="logo-dot">.</span></a>
+            <a href="#" class="logo">Broad Oak Window Cleaning</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#areas">Areas</a></li>
-                <li><a href="#why">Why Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu">☰</div>
@@ -304,10 +256,36 @@
     <!-- Hero -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Clean Windows,<br>Pure Waterfed Technology</h1>
-            <p>Professional waterfed pole window cleaning across North West England &amp; North Wales.<br>Streak-free results with zero chemicals.</p>
-            <a href="#contact" class="btn">Get Your Free Quote Today</a>
-            <p style="margin-top: 2rem; font-size: 1.1rem;">✓ Fully Insured ✓ Pure Water System ✓ No Ladders</p>
+            <h1>Professional Window Cleaning</h1>
+            <p>Reliable, high-quality window cleaning service across the Wirral, Chester, Warrington, North Wales, Shrewsbury, Newport & Telford.</p>
+            <a href="#contact" class="btn">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Early Contact Section -->
+    <section id="contact" class="contact-early">
+        <div class="container">
+            <h2>Get In Touch Today</h2>
+            <div class="contact-grid">
+                <div>
+                    <h3>We’d love to hear from you</h3>
+                    <p style="margin: 1.5rem 0 2rem; font-size: 1.1rem;">
+                        Call us or send a message for a fast, no-obligation quote.
+                    </p>
+                    <p><strong>Phone:</strong> <a href="tel:07852902857" style="color: var(--primary); font-size: 1.3rem;">07852 902857</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:broadoakwindowcleaning@gmail.com" style="color: var(--primary);">broadoakwindowcleaning@gmail.com</a></p>
+                </div>
+                
+                <div>
+                    <form id="contact-form">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="tel" id="phone" placeholder="Phone Number" required>
+                        <input type="email" id="email" placeholder="Email Address">
+                        <textarea id="message" rows="4" placeholder="Tell us about your property and cleaning needs (e.g. house, shop, number of windows, postcode)" required></textarea>
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -319,17 +297,17 @@
                 <div class="service-card">
                     <div class="service-icon">🪟</div>
                     <h3>Window Cleaning</h3>
-                    <p>High-reach waterfed pole system for homes, offices, conservatories and commercial buildings. Safe, efficient and eco-friendly.</p>
+                    <p>Professional cleaning of windows, frames, sills and doors for homes and businesses.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🏠</div>
-                    <h3>Residential Cleaning</h3>
-                    <p>Regular or one-off cleans for houses, bungalows and apartments. We cover all heights safely from the ground.</p>
+                    <h3>Residential</h3>
+                    <p>Regular or one-off cleans for houses, bungalows, and apartments of all sizes.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🏢</div>
-                    <h3>Commercial Cleaning</h3>
-                    <p>Shop fronts, offices, schools, hotels and industrial units. Reliable scheduled cleaning contracts available.</p>
+                    <h3>Commercial</h3>
+                    <p>Shop fronts, offices, schools, pubs and other commercial properties.</p>
                 </div>
             </div>
         </div>
@@ -339,92 +317,38 @@
     <section id="areas" class="areas">
         <div class="container">
             <h2>Areas We Cover</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
-                Serving the entire North West of England and North Wales with fast response times.
-            </p>
             <div class="areas-grid">
-                <div class="area-item">Manchester</div>
-                <div class="area-item">Liverpool</div>
+                <div class="area-item">The Wirral</div>
                 <div class="area-item">Chester</div>
-                <div class="area-item">Preston</div>
-                <div class="area-item">Blackpool</div>
-                <div class="area-item">Bolton</div>
-                <div class="area-item">Wigan</div>
                 <div class="area-item">Warrington</div>
                 <div class="area-item">North Wales</div>
-                <div class="area-item">Snowdonia</div>
-                <div class="area-item">Bangor</div>
-                <div class="area-item">Llandudno</div>
-                <div class="area-item">St Helens</div>
-                <div class="area-item">Southport</div>
+                <div class="area-item">Shrewsbury</div>
+                <div class="area-item">Newport</div>
+                <div class="area-item">Telford</div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us -->
-    <section id="why" class="why-us">
+    <section class="why-us">
         <div class="container">
-            <h2 style="color: white;">Why Choose PureReach?</h2>
+            <h2 style="color: white;">Why Choose Broad Oak?</h2>
             <div class="why-grid">
                 <div class="why-card">
-                    <h3>🌱 Pure Water Technology</h3>
-                    <p>De-ionised water leaves no spots or streaks. No harsh chemicals — better for your windows and the environment.</p>
+                    <h3>✅ Reliable & Punctual</h3>
+                    <p>We turn up when we say we will and deliver consistent, high-quality results.</p>
                 </div>
                 <div class="why-card">
-                    <h3>🛡️ Safe &amp; Professional</h3>
-                    <p>Waterfed pole system means no ladders or scaffolding. Fully insured with over 10 years experience.</p>
+                    <h3>✅ Fully Insured</h3>
+                    <p>Public liability insurance for your complete peace of mind.</p>
                 </div>
                 <div class="why-card">
-                    <h3>💰 Competitive Pricing</h3>
-                    <p>Transparent pricing with no hidden fees. Regular customers enjoy discounted rates.</p>
+                    <h3>✅ Competitive Prices</h3>
+                    <p>Excellent service at fair, transparent rates with no hidden fees.</p>
                 </div>
                 <div class="why-card">
-                    <h3>⭐ Customer Focused</h3>
-                    <p>Local family business. We pride ourselves on reliability, punctuality and outstanding customer service.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonial -->
-    <section class="testimonial">
-        <div class="container">
-            <h2>What Our Customers Say</h2>
-            <div class="testimonial-slider">
-                <p class="testimonial-text">"PureReach transformed the look of our house! The windows have never been cleaner. Highly recommend their waterfed system — no streaks at all!"</p>
-                <p><strong>— Sarah Thompson, Chester</strong></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 style="color: white;">Get In Touch</h2>
-            <div class="contact-grid">
-                <div>
-                    <h3 style="margin-bottom: 1.5rem;">Ready for sparkling windows?</h3>
-                    <p style="margin-bottom: 2rem; opacity: 0.9;">Fill out the form below or call us directly for a free, no-obligation quote.</p>
-                    
-                    <div style="margin-bottom: 2rem;">
-                        <p><strong>Phone:</strong> <a href="tel:01234567890" style="color: var(--primary);">01234 567 890</a></p>
-                        <p><strong>Email:</strong> <a href="mailto:info@purereach.co.uk" style="color: var(--primary);">info@purereach.co.uk</a></p>
-                    </div>
-                    
-                    <div>
-                        <p><strong>Service Areas:</strong><br>
-                        North West England &amp; North Wales</p>
-                    </div>
-                </div>
-                
-                <div>
-                    <form id="contact-form">
-                        <input type="text" id="name" placeholder="Your Name" required>
-                        <input type="tel" id="phone" placeholder="Phone Number" required>
-                        <input type="email" id="email" placeholder="Email Address">
-                        <textarea id="message" rows="5" placeholder="Tell us about your cleaning needs (e.g. house size, frequency, postcode)" required></textarea>
-                        <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Send Message</button>
-                    </form>
+                    <h3>✅ Local & Trusted</h3>
+                    <p>Local window cleaners with a strong reputation for great customer service.</p>
                 </div>
             </div>
         </div>
@@ -433,54 +357,34 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 PureReach Waterfed Window Cleaning. All Rights Reserved.</p>
-            <p style="margin-top: 0.5rem;">Professional • Reliable • Eco-Friendly</p>
-            <p style="margin-top: 1.5rem; font-size: 0.85rem;">Serving Manchester, Liverpool, Chester, Preston, North Wales &amp; surrounding areas</p>
+            <p><strong>Broad Oak Window Cleaning</strong></p>
+            <p>Phone: <a href="tel:07852902857" style="color: #fff;">07852 902857</a> | 
+               Email: <a href="mailto:broadoakwindowcleaning@gmail.com" style="color: #fff;">broadoakwindowcleaning@gmail.com</a></p>
+            <p style="margin-top: 1.5rem;">Serving The Wirral, Chester, Warrington, North Wales, Shrewsbury, Newport & Telford</p>
+            <p style="margin-top: 2rem; font-size: 0.9rem;">© 2026 Broad Oak Window Cleaning. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Simple form submission (demo)
+        // Form submission
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const name = document.getElementById('name').value;
-            
-            alert(`Thank you, ${name}! Your message has been received. We'll contact you within 24 hours.`);
-            
-            // Reset form
+            alert(`Thank you, ${name}! Your message has been received. We'll get back to you shortly.`);
             this.reset();
         });
-        
-        // Smooth scrolling for navigation links
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 if (this.getAttribute('href') !== '#') {
                     e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(26, 42, 68, 0.98)';
-                header.style.padding = '0.8rem 0';
-            } else {
-                header.style.background = 'linear-gradient(rgba(26, 42, 68, 0.95), rgba(26, 42, 68, 0.95)), url("https://picsum.photos/id/1015/1920/1080") center/cover no-repeat';
-                header.style.padding = '1rem 0';
-            }
-        });
-        
-        // Mobile menu (placeholder - you can enhance this)
-        console.log('%cPureReach Website Ready! ✅', 'color: #00a8e6; font-size: 14px;');
     </script>
 </body>
 </html>
