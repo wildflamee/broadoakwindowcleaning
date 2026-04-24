@@ -57,9 +57,7 @@
             font-weight: 500;
         }
         
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+        .nav-links a:hover { color: var(--primary); }
         
         .hero {
             height: 100vh;
@@ -72,20 +70,8 @@
             margin-top: 80px;
         }
         
-        .hero-content {
-            max-width: 800px;
-            padding: 0 2rem;
-        }
-        
-        .hero h1 {
-            font-size: 3.4rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.35rem;
-            margin-bottom: 2rem;
-        }
+        .hero h1 { font-size: 3.4rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.35rem; margin-bottom: 2rem; }
         
         .btn {
             display: inline-block;
@@ -115,20 +101,44 @@
         h2 {
             font-size: 2.6rem;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             color: var(--dark);
+        }
+        
+        .promo-box {
+            background: linear-gradient(135deg, #0066cc, #003366);
+            color: white;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            font-size: 1.45rem;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
+            margin-bottom: 3rem;
         }
         
         .contact-early {
             background: #f8f9fa;
-            padding: 60px 0;
+            padding: 40px 0 70px;
         }
         
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            align-items: start;
+        }
+        
+        .contact-info {
+            font-size: 1.25rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info strong {
+            display: inline-block;
+            min-width: 80px;
         }
         
         form {
@@ -142,6 +152,20 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             font-size: 1rem;
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 10px 0 20px;
+        }
+        
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
         }
         
         .services {
@@ -200,23 +224,6 @@
             transform: translateY(-5px);
         }
         
-        .why-us {
-            background: linear-gradient(135deg, #0066cc, #003366);
-            color: white;
-        }
-        
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .why-card {
-            background: rgba(255,255,255,0.12);
-            padding: 2rem;
-            border-radius: 12px;
-        }
-        
         footer {
             background: #111;
             color: #aaa;
@@ -224,17 +231,12 @@
             text-align: center;
         }
         
-        .mobile-menu {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-        
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .mobile-menu { display: block; }
             .hero h1 { font-size: 2.7rem; }
             .contact-grid { grid-template-columns: 1fr; }
+            .promo-box { font-size: 1.25rem; padding: 2rem 1.5rem; }
         }
     </style>
 </head>
@@ -262,18 +264,23 @@
         </div>
     </section>
 
-    <!-- Contact Section (Early) -->
+    <!-- Contact Section -->
     <section id="contact" class="contact-early">
         <div class="container">
+            <div class="promo-box">
+                Book our full exterior cleaning package and get your property looking better than ever
+            </div>
+
             <h2>Get In Touch Today</h2>
+            
             <div class="contact-grid">
-                <div>
+                <div class="contact-info">
                     <h3>We’d love to hear from you</h3>
-                    <p style="margin: 1.5rem 0 2rem; font-size: 1.1rem;">
+                    <p style="margin: 1.8rem 0 1.2rem; font-size: 1.15rem;">
                         Call us or send a message for a fast, no-obligation quote.
                     </p>
-                    <p><strong>Phone:</strong> <a href="tel:07852902857" style="color: var(--primary); font-size: 1.3rem;">07852 902857</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:broadoakwindowcleaning@gmail.com" style="color: var(--primary);">broadoakwindowcleaning@gmail.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:07852902857" style="color: var(--primary); font-size: 1.45rem; font-weight: 600;">07852 902857</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:broadoakwindowcleaning@gmail.com" style="color: var(--primary); font-size: 1.2rem;">broadoakwindowcleaning@gmail.com</a></p>
                 </div>
                 
                 <div>
@@ -281,12 +288,23 @@
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="tel" name="phone" placeholder="Phone Number" required>
                         <input type="email" name="email" placeholder="Email Address">
-                        <textarea name="message" rows="5" placeholder="Tell us about your property and cleaning needs (e.g. house, shop, number of windows, postcode)" required></textarea>
                         
-                        <!-- Hidden field to prevent spam -->
+                        <label style="font-weight: 600; margin: 15px 0 8px; display: block;">Services You Require:</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="services" value="Window Cleaning"> Window Cleaning</label>
+                            <label><input type="checkbox" name="services" value="Gutter Cleaning"> Gutter Cleaning</label>
+                            <label><input type="checkbox" name="services" value="Fascia & Soffit Cleaning"> Fascia & Soffit Cleaning</label>
+                            <label><input type="checkbox" name="services" value="Conservatory Cleaning"> Conservatory Cleaning</label>
+                            <label><input type="checkbox" name="services" value="Solar Panel Cleaning"> Solar Panel Cleaning</label>
+                            <label><input type="checkbox" name="services" value="Pressure Washing"> Pressure Washing</label>
+                            <label><input type="checkbox" name="services" value="Full Exterior Package"> Full Exterior Package</label>
+                        </div>
+                        
+                        <textarea name="message" rows="5" placeholder="Additional Information (e.g. property type, number of bedrooms or windows, address, any other relevant information)" required></textarea>
+                        
                         <input type="text" name="_gotcha" style="display:none;">
                         
-                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -304,14 +322,29 @@
                     <p>Professional cleaning of windows, frames, sills and doors for homes and businesses.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Residential</h3>
-                    <p>Regular or one-off cleans for houses, bungalows, and apartments of all sizes.</p>
+                    <div class="service-icon">🪣</div>
+                    <h3>Gutter Cleaning</h3>
+                    <p>Clearing blocked gutters and downpipes to prevent water damage.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🏢</div>
-                    <h3>Commercial</h3>
-                    <p>Shop fronts, offices, schools, pubs and other commercial properties.</p>
+                    <div class="service-icon">🏠</div>
+                    <h3>Fascia & Soffit Cleaning</h3>
+                    <p>Thorough cleaning of fascias, soffits and bargeboards.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌿</div>
+                    <h3>Conservatory Cleaning</h3>
+                    <p>Roof and glass cleaning to bring back brightness and clarity.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">☀️</div>
+                    <h3>Solar Panel Cleaning</h3>
+                    <p>Improve efficiency by removing dirt, dust and bird droppings.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧼</div>
+                    <h3>Pressure Washing</h3>
+                    <p>Driveways, patios, paths and exterior walls cleaned to a high standard.</p>
                 </div>
             </div>
         </div>
@@ -325,35 +358,11 @@
                 <div class="area-item">The Wirral</div>
                 <div class="area-item">Chester</div>
                 <div class="area-item">Warrington</div>
+                <div class="area-item">Wrexham</div>
                 <div class="area-item">North Wales</div>
                 <div class="area-item">Shrewsbury</div>
                 <div class="area-item">Newport</div>
                 <div class="area-item">Telford</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="why-us">
-        <div class="container">
-            <h2 style="color: white;">Why Choose Broad Oak?</h2>
-            <div class="why-grid">
-                <div class="why-card">
-                    <h3>✅ Reliable & Punctual</h3>
-                    <p>We turn up when we say we will and deliver consistent, high-quality results.</p>
-                </div>
-                <div class="why-card">
-                    <h3>✅ Fully Insured</h3>
-                    <p>Public liability insurance for your complete peace of mind.</p>
-                </div>
-                <div class="why-card">
-                    <h3>✅ Competitive Prices</h3>
-                    <p>Excellent service at fair, transparent rates with no hidden fees.</p>
-                </div>
-                <div class="why-card">
-                    <h3>✅ Local & Trusted</h3>
-                    <p>Local window cleaners with a strong reputation for great customer service.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -364,17 +373,15 @@
             <p><strong>Broad Oak Window Cleaning</strong></p>
             <p>Phone: <a href="tel:07852902857" style="color: #fff;">07852 902857</a> | 
                Email: <a href="mailto:broadoakwindowcleaning@gmail.com" style="color: #fff;">broadoakwindowcleaning@gmail.com</a></p>
-            <p style="margin-top: 1.5rem;">Serving The Wirral, Chester, Warrington, North Wales, Shrewsbury, Newport & Telford</p>
             <p style="margin-top: 2rem; font-size: 0.9rem;">© 2026 Broad Oak Window Cleaning. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Optional: Show success message after redirect back from Formspree
         window.addEventListener('load', () => {
             const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('submitted') === 'true') {
-                alert('Thank you! Your message has been sent successfully. We will contact you shortly.');
+            if (urlParams.get('submitted') === 'true' || urlParams.has('_next')) {
+                alert('Thank you! Your message has been sent successfully.\n\nWe will contact you shortly.');
             }
         });
     </script>
