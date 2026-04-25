@@ -67,11 +67,7 @@
             border: none;
         }
        
-        /* Mobile Menu Styles */
-        .nav-links {
-            transition: all 0.3s ease;
-        }
-        
+        /* Mobile Menu */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -95,8 +91,15 @@
             }
             
             .hero h1 { font-size: 2.7rem; }
-            .contact-grid { grid-template-columns: 1fr; }
+            .contact-grid { 
+                grid-template-columns: 1fr; 
+                gap: 2rem;
+            }
             .promo-box { font-size: 1.25rem; padding: 2rem 1.5rem; }
+        }
+       
+        @media (min-width: 769px) {
+            .mobile-menu { display: none !important; }
         }
        
         .hero {
@@ -169,7 +172,7 @@
        
         .contact-early {
             background: #f8f9fa;
-            padding: 40px 0 70px;
+            padding: 50px 0 80px;
         }
        
         .contact-grid {
@@ -178,7 +181,9 @@
             gap: 4rem;
         }
        
-        .contact-info p { margin-bottom: 1rem; }
+        .contact-info {
+            padding-top: 20px;
+        }
        
         form {
             display: flex;
@@ -300,7 +305,7 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>We’d love to hear from you</h3>
-                    <p style="margin: 1.8rem 0 1.2rem; font-size: 1.15rem;">
+                    <p style="margin: 1.8rem 0 1.5rem; font-size: 1.15rem;">
                         Call us or send a message for a fast, no-obligation quote.
                     </p>
                     <p><strong>Phone:</strong> <a href="tel:07852902857" style="color: var(--primary); font-size: 1.45rem; font-weight: 600;">07852 902857</a></p>
@@ -408,8 +413,6 @@
 
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            
-            // Optional: Change icon between hamburger and X
             if (navLinks.classList.contains('active')) {
                 mobileMenu.textContent = '✕';
             } else {
